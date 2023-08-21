@@ -16,7 +16,7 @@ const Wrap = styled("div", {
 const View = ({}: IProps) => {
   //TODO: clickable TBD
   return (
-    <Wrap>
+    <Wrap id="clients">
       <div>Title our clients</div>
       <div>
         <a>1</a>

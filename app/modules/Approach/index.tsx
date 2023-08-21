@@ -18,7 +18,7 @@ const Wrap = styled("div", {
 });
 const View = ({}: IProps) => {
   return (
-    <Wrap>
+    <Wrap id="approach">
       <div className="box">
         <div>title</div>
         <div>

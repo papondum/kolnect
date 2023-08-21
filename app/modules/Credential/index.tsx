@@ -26,7 +26,7 @@ const Wrap = styled("div", {
 const View = ({}: IProps) => {
   //TODO: animate number running when scroll
   return (
-    <Wrap>
+    <Wrap id="credential">
       <div>Credential Title</div>
       <div className="box-value">
         <div>1</div>

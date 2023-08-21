@@ -11,7 +11,7 @@ const Wrap = styled("div", {
 });
 const View = ({}: IProps) => {
   return (
-    <Wrap>
+    <Wrap id="packages">
       <div>title Package</div>
       <div>
         <div>card1</div>

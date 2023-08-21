@@ -21,7 +21,7 @@ const Wrap = styled("div", {
 });
 const View = ({}: IProps) => {
   return (
-    <Wrap>
+    <Wrap id="trending">
       <div>TITLE Trending</div>
       <div className="content-wrapper">
         <div className="card">

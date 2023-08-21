@@ -14,7 +14,7 @@ const Wrap = styled("div", {
   justifyContent: "center",
 });
 const View = ({}: IProps) => {
-  return <Wrap>Working</Wrap>;
+  return <Wrap id="working-phase">Working</Wrap>;
 };
 
 export default View;

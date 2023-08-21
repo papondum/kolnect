@@ -11,7 +11,7 @@ interface IProps {
 const Wrap = styled("div", {
   bc: "orange",
   maxWidth: 1440,
-  p: "$3",
+  p: "$6",
   display: "grid",
   gridTemplate: "1fr 1fr / 1fr 1fr 1fr",
   "@maxlg": {
@@ -23,7 +23,10 @@ const Wrap = styled("div", {
   ".box": {
     textAlign: "center",
     p: "$3",
+    maxWidth: 250,
   },
+  ".mid": { m: "auto", "@maxlg": { m: "auto" } },
+  ".right": { ml: "auto", "@maxlg": { m: "auto" } },
 });
 const View = ({}: IProps) => {
   const data = {
@@ -43,20 +46,21 @@ const View = ({}: IProps) => {
   };
   //TODO: Chart dynamic easy config value
   return (
-    <Wrap>
+    <Wrap id="platform-data">
       <div>Title Platform data</div>
-      <div className="box">
-        <Pie
-          data={data}
-          // options={...}
-          // {...props}
-        />
+      <div className="box mid">
+        <Pie data={data} />
       </div>
-
-      <div className="box">Graph2</div>
+      <div className="box right">
+        <Pie data={data} />
+      </div>
       <div className="box">GraphStat</div>
-      <div className="box">Graph4</div>
-      <div className="box">Graph5</div>
+      <div className="box mid">
+        <Pie data={data} />
+      </div>
+      <div className="box right">
+        <Pie data={data} />
+      </div>
     </Wrap>
   );
 };
