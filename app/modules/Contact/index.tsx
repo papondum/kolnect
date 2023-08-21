@@ -1,5 +1,5 @@
 import { styled } from "@/stitches.config";
-
+import Text from "@/app/components/text";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;
@@ -19,7 +19,7 @@ const Wrap = styled("div", {
 const View = ({}: IProps) => {
   return (
     <Wrap>
-      <div>Contact</div>
+      <Text>Contact</Text>
       <div>Box</div>
     </Wrap>
   );

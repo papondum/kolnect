@@ -1,5 +1,5 @@
 import { styled } from "@/stitches.config";
-import { Container } from "@/components/container";
+import { Container } from "@/app/components/container";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;

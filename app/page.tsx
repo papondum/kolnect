@@ -1,18 +1,18 @@
 import Image from "next/image";
 
-import HeaderNav from "@/modules/HeaderNav";
-import Banner from "@/modules/Banner";
-import SubBanner from "@/modules/SubBanner";
-import Approach from "@/modules/Approach";
-import WorkingPhase from "@/modules/WorkingPhase";
-import PlatformData from "@/modules/PlatformData";
-import Credential from "@/modules/Credential";
-import Clients from "@/modules/Clients";
-import Trending from "@/modules/Trending";
-import Packages from "@/modules/Packages";
-import Contact from "@/modules/Contact";
+import HeaderNav from "@/app/modules/HeaderNav";
+import Banner from "@/app/modules/Banner";
+import SubBanner from "@/app/modules/SubBanner";
+import Approach from "@/app/modules/Approach";
+import WorkingPhase from "@/app/modules/WorkingPhase";
+import PlatformData from "@/app/modules/PlatformData";
+import Credential from "@/app/modules/Credential";
+import Clients from "@/app/modules/Clients";
+import Trending from "@/app/modules/Trending";
+import Packages from "@/app/modules/Packages";
+import Contact from "@/app/modules/Contact";
 
-import Footer from "@/modules/Footer";
+import Footer from "@/app/modules/Footer";
 
 import { styled, getCssText } from "@/stitches.config";
 const Main = styled("main", {
