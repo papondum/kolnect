@@ -6,10 +6,18 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  //
+  height: 72,
+  position: "sticky",
+  top: 0,
+  bc: "black",
+  p: "$3",
 });
 const View = ({}: IProps) => {
-  return <Container>Nav</Container>;
+  return (
+    <Wrap>
+      <Container>Nav</Container>
+    </Wrap>
+  );
 };
 
 export default View;

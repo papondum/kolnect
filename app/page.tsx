@@ -19,7 +19,7 @@ const Main = styled("main", {
   m: 0,
   bc: "$basebg",
   width: "100%",
-  height: "100dvh",
+  height: "auto",
   color: "white",
 });
 

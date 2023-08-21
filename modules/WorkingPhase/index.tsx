@@ -6,7 +6,12 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  //
+  p: "$6",
+  bc: "yellow",
+  color: "black",
+  display: "flex",
+  textAlign: "center",
+  justifyContent: "center",
 });
 const View = ({}: IProps) => {
   return <Wrap>Working</Wrap>;

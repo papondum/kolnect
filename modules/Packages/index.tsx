@@ -6,10 +6,22 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  //
+  p: "$6",
+  textAlign: "center",
 });
 const View = ({}: IProps) => {
-  return <Wrap>Packages</Wrap>;
+  return (
+    <Wrap>
+      <div>title Package</div>
+      <div>
+        <div>card1</div>
+        <div>card1</div>
+        <div>card1</div>
+        <div>card1</div>
+        <div>card1</div>
+      </div>
+    </Wrap>
+  );
 };
 
 export default View;

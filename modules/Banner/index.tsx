@@ -6,7 +6,8 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  //
+  height: 550,
+  bc: "red",
 });
 const View = ({}: IProps) => {
   return <Wrap>Banner</Wrap>;

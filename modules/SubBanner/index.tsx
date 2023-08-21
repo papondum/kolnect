@@ -6,10 +6,22 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  //
+  bc: "blue",
+  display: "flex",
+  p: "$6",
+  ".box": { flex: 1, justifyContent: "center", textAlign: "center" },
+  "@maxlg": {
+    display: "block",
+  },
 });
 const View = ({}: IProps) => {
-  return <Wrap>Sub</Wrap>;
+  return (
+    <Wrap>
+      <div className="box">1</div>
+      <div className="box">2</div>
+      <div className="box">3</div>
+    </Wrap>
+  );
 };
 
 export default View;
