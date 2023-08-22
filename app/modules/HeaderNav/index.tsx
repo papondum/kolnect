@@ -23,44 +23,52 @@ const Wrap = styled("div", {
       },
     },
   },
-  ".submenu": {
-    left: 0,
-    opacity: 0,
-    position: "absolute",
-    top: 35,
-    visibility: "hidden",
-    zIndex: 1,
-    listStyle: "none",
-  },
-  "&:hover": {
-    ".submenu": {
-      opacity: 1,
-      top: 40,
-      visibility: "visible",
-    },
-    // "li:hover a ": {
-    //   background: "#000000",
-    // },
-    "a:hover": {
-      background: "#DF4B05",
-    },
-  },
-  li: {
-    float: "left",
-    "list-style-type": "none",
-    position: "relative",
-    width: "auto",
-  },
-  a: {
-    background: "#30A6E6",
-    color: "#FFFFFF",
-    display: "block",
-    textAlign: "center",
-    textDecoration: "none",
-  },
+
   ".link-wrapper": {
     display: "flex",
     gap: "$3",
+
+    ".hover-elem": {
+      position: "relative",
+      ".submenu": {
+        left: 0,
+        opacity: 0,
+        position: "absolute",
+        top: 20,
+        visibility: "hidden",
+        zIndex: 1,
+        listStyle: "none",
+      },
+      "&:hover": {
+        ".submenu": {
+          opacity: 1,
+          // bottom: 0,
+          visibility: "visible",
+          "a:hover": {
+            background: "#DF4B05",
+          },
+        },
+      },
+      // "li:hover a ": {
+      //   background: "#000000",
+      // },
+      // "a:hover": {
+      //   background: "#DF4B05",
+      // },
+    },
+    li: {
+      float: "left",
+      "list-style-type": "none",
+      position: "relative",
+      width: "auto",
+    },
+    a: {
+      background: "#30A6E6",
+      color: "#FFFFFF",
+      display: "block",
+      textAlign: "center",
+      textDecoration: "none",
+    },
   },
 });
 
@@ -71,7 +79,7 @@ const View = ({}: IProps) => {
         <div>logo</div>
         <div className="link-wrapper">
           {/* <Link href="#">Why us?</Link> */}
-          <li>
+          <li className="hover-elem">
             <a href="#">Why us?</a>
             <ul className="submenu">
               <li>

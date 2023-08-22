@@ -15,7 +15,7 @@ const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
     //remove everything before the hash
     const targetId = e.currentTarget.href.replace(/.*\#/, "");
     const elem = document.getElementById(targetId);
-    let position = elem?.offsetTop - OFFSET;
+    let position = elem?.offsetTop || 0 - OFFSET;
     position = Math.round(position);
     window.scrollTo({
       top: position,
