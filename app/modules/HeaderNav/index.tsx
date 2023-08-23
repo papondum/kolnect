@@ -1,6 +1,7 @@
 import { styled } from "@/stitches.config";
 import { Container } from "@/app/components/container";
 import ScrollLink from "@/app/components/scrolllink";
+import Logo from "@/app/assets/logo";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;
@@ -8,10 +9,13 @@ interface IProps {
 }
 const Wrap = styled("div", {
   height: 72,
+  display: "flex",
+  alignItems: "center",
   position: "sticky",
   top: 0,
   bc: "black",
   p: "$3",
+  zIndex: 1,
   ".dropdown": {
     nav: {
       display: "none",
@@ -26,6 +30,7 @@ const Wrap = styled("div", {
 
   ".link-wrapper": {
     display: "flex",
+    alignItems: "center",
     gap: "$3",
 
     ".hover-elem": {
@@ -63,7 +68,7 @@ const Wrap = styled("div", {
       width: "auto",
     },
     a: {
-      background: "#30A6E6",
+      // background: "#30A6E6",
       color: "#FFFFFF",
       display: "block",
       textAlign: "center",
@@ -76,7 +81,7 @@ const View = ({}: IProps) => {
   return (
     <Wrap>
       <Container style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>logo</div>
+        <Logo />
         <div className="link-wrapper">
           {/* <Link href="#">Why us?</Link> */}
           <li className="hover-elem">
