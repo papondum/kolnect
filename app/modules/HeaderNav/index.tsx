@@ -15,7 +15,20 @@ const Wrap = styled("div", {
   top: 0,
   bc: "black",
   p: "$3",
-  zIndex: 1,
+  zIndex: 3,
+  ".container": {
+    maxWidth: 1264,
+    flex: 1,
+    margin: "auto",
+    display: "flex",
+    justifyContent: "space-between",
+    ".logo-wrap": {
+      width: "16.11%",
+      svg: {
+        width: "100%",
+      },
+    },
+  },
   ".dropdown": {
     nav: {
       display: "none",
@@ -32,7 +45,7 @@ const Wrap = styled("div", {
     display: "flex",
     alignItems: "center",
     gap: "$3",
-
+    "@maxlg": { display: "none" },
     ".hover-elem": {
       position: "relative",
       ".submenu": {
@@ -80,8 +93,10 @@ const Wrap = styled("div", {
 const View = ({}: IProps) => {
   return (
     <Wrap>
-      <Container style={{ display: "flex", justifyContent: "space-between" }}>
-        <Logo />
+      <div className="container">
+        <div className="logo-wrap">
+          <Logo />
+        </div>
         <div className="link-wrapper">
           {/* <Link href="#">Why us?</Link> */}
           <li className="hover-elem">
@@ -110,7 +125,7 @@ const View = ({}: IProps) => {
           <ScrollLink href="#packages">Our Packages</ScrollLink>
           <ScrollLink href="#contact">Our Contact</ScrollLink>
         </div>
-      </Container>
+      </div>
     </Wrap>
   );
 };

@@ -16,10 +16,13 @@ const introTextVariants: Variants = {
 };
 interface IProps {
   children?: React.ReactNode;
+  className?: string;
+  style?: any;
 }
 const View: React.FunctionComponent<IProps> = (props: IProps) => {
   return (
     <TextStyle
+      {...props}
       initial="hide"
       whileInView="show"
       variants={introTextVariants}
