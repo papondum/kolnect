@@ -6,7 +6,7 @@ interface IProps {
   //   panel: IPanel;
 }
 const Wrap = styled("div", {
-  bc: "purple",
+  bc: "$basebg",
   display: "flex",
   p: "$6",
   justifyContent: "center",
@@ -15,12 +15,33 @@ const Wrap = styled("div", {
     display: "block",
     textAlign: "center",
   },
+  ".title": {
+    h3: {
+      fontSize: "$7",
+      span: { color: "$primary" },
+    },
+  },
+  ".box": {
+    flex: 1,
+    ".inner-box": {
+      maxWidth: 400,
+      marginLeft: "auto",
+      textAlign: "start",
+    },
+  },
 });
 const View = ({}: IProps) => {
   return (
     <Wrap id="contact">
-      <Text>Contact</Text>
-      <div>Box</div>
+      <div className="box title">
+        <Text className="inner-box">
+          <h3>
+            Our <span>Contact</span>
+          </h3>
+          <p>Become a customer</p>
+        </Text>
+      </div>
+      <div className="box">Box</div>
     </Wrap>
   );
 };

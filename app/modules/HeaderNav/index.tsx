@@ -44,7 +44,7 @@ const Wrap = styled("div", {
   ".link-wrapper": {
     display: "flex",
     alignItems: "center",
-    gap: "$3",
+    gap: "$7",
     "@maxlg": { display: "none" },
     ".hover-elem": {
       position: "relative",
@@ -52,10 +52,13 @@ const Wrap = styled("div", {
         left: 0,
         opacity: 0,
         position: "absolute",
-        top: 20,
+        top: 32,
+        pt: 26,
         visibility: "hidden",
         zIndex: 1,
         listStyle: "none",
+        bc: "black",
+        width: 186,
       },
       "&:hover": {
         ".submenu": {
@@ -79,6 +82,7 @@ const Wrap = styled("div", {
       "list-style-type": "none",
       position: "relative",
       width: "auto",
+      p: "$3 $4",
     },
     a: {
       // background: "#30A6E6",
@@ -100,7 +104,7 @@ const View = ({}: IProps) => {
         <div className="link-wrapper">
           {/* <Link href="#">Why us?</Link> */}
           <li className="hover-elem">
-            <a href="#">Why us?</a>
+            <a href="#">Why Us?</a>
             <ul className="submenu">
               <li>
                 <ScrollLink href="#approach">our approach</ScrollLink>

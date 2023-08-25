@@ -15,6 +15,7 @@ const Wrap = styled("div", {
   maxWidth: 1304,
   px: 32,
   margin: "0 auto",
+  mb: 150,
   ".title": {
     mb: 50,
     h3: { fontSize: "$7", mb: "$3", span: { color: "$primary" } },
@@ -68,15 +69,15 @@ const View = ({}: IProps) => {
           <div className="subtitle">Professional Procedure</div>
         </Text>
         <div>
-          <div className="list-box">
+          <Text className="list-box">
             <span>1</span>Pick the right KOLs with strategy-drive
-          </div>
-          <div className="list-box">
+          </Text>
+          <Text className="list-box">
             <span>2</span>Choose the right platform of each audiences
-          </div>
-          <div className="list-box">
+          </Text>
+          <Text className="list-box">
             <span>3</span>Connect with the right message
-          </div>
+          </Text>
         </div>
       </div>
       <div className="box">

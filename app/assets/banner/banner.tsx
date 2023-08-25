@@ -7,12 +7,12 @@ export const Banner = () => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
-    <g clip-path="url(#clip0_451_6584)">
+    <g clipPath="url(#clip0_451_6584)">
       <path
         d="M388.26 498.928C567.568 456.575 698.688 361.969 681.127 287.62C663.565 213.272 503.971 187.334 324.664 229.687C145.357 272.041 14.2365 366.647 31.7981 440.995C49.3597 515.344 208.953 541.282 388.26 498.928Z"
         stroke="white"
-        stroke-width="2.27"
-        stroke-miterlimit="10"
+        strokeWidth="2.27"
+        strokeMiterlimit="10"
       />
       <rect x="85" width="497.234" height="500" fill="url(#pattern1)" />
     </g>
