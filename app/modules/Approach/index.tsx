@@ -39,7 +39,7 @@ const Wrap = styled("div", {
     px: 16,
   },
   ".list-box": {
-    border: "1px solid $hightlight",
+    border: "1px solid $highlight",
     p: "$4",
     br: 8,
     fontSize: "$3",
@@ -50,7 +50,7 @@ const Wrap = styled("div", {
     span: {
       alignItems: "center",
       justifyContent: "center",
-      bc: "$hightlight",
+      bc: "$highlight",
       width: 52,
       height: 52,
       br: "50%",

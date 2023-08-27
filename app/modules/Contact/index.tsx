@@ -1,9 +1,16 @@
 import { styled } from "@/stitches.config";
 import Text from "@/app/components/text";
+import Image from "next/image";
+import contacticon from "@/app/assets/Icon_Ourcontact.png";
+import Glow from "@/app/assets/banner/glow";
+import greenimgglow from "@/app/assets/Rectangle-green.png";
+import pinkimgglow from "@/app/assets/Rectangle-pink.png";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;
   //   panel: IPanel;
+  mobile: string;
+  email: string;
 }
 const Wrap = styled("div", {
   bc: "$basebg",
@@ -11,28 +18,72 @@ const Wrap = styled("div", {
   p: "$6",
   justifyContent: "center",
   gap: "$4",
+  mt: 122,
+  mb: 111,
+  position: "relative",
+  "@maxlg": {
+    my: 100,
+  },
   "@maxsm": {
     display: "block",
     textAlign: "center",
+  },
+  ".overlay-right": {
+    position: "absolute",
+    right: 0,
+    height: "112%",
+    width: "auto",
+    "@maxsm": { display: "none" },
+  },
+  ".overlay-left": {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    height: "112%",
+    width: "auto",
+    "@maxsm": { display: "none" },
+  },
+  ".box": {
+    flex: 1,
+    margin: "auto",
+    ".inner-box": {
+      maxWidth: 400,
+      marginLeft: "auto",
+      textAlign: "start",
+      "@maxlg": { mx: "auto" },
+    },
   },
   ".title": {
     h3: {
       fontSize: "$7",
       span: { color: "$primary" },
     },
+    mb: 40,
   },
-  ".box": {
-    flex: 1,
-    ".inner-box": {
-      maxWidth: 400,
-      marginLeft: "auto",
-      textAlign: "start",
+  ".contact": {
+    br: 24,
+    border: "1px solid #9F9F9F",
+    p: 40,
+    maxWidth: 370,
+    display: "flex",
+    flexDirection: "column",
+    gap: 24,
+    "@maxlg": { margin: "auto" },
+    img: { maxWidth: 80, height: "auto" },
+    ".detail": { gap: 10, "@maxlg": { textAlign: "start" } },
+    ".title-wrap": {
+      display: "flex",
+      gap: 24,
+      alignItems: "center",
+      ".text": { fontSize: "$4" },
     },
   },
 });
-const View = ({}: IProps) => {
+const View = ({ email, mobile }: IProps) => {
   return (
     <Wrap id="contact">
+      <Image className="overlay-right" alt="" src={greenimgglow} />
+      <Image className="overlay-left" alt="" src={pinkimgglow} />
       <div className="box title">
         <Text className="inner-box">
           <h3>
@@ -41,7 +92,24 @@ const View = ({}: IProps) => {
           <p>Become a customer</p>
         </Text>
       </div>
-      <div className="box">Box</div>
+      <div className="box">
+        <div className="contact">
+          <div className="title-wrap">
+            <div>
+              <Image src={contacticon} alt="" />
+            </div>
+            <div className="text">Sales team</div>
+          </div>
+          <div className="detail">
+            <div>
+              <div>{mobile}</div>
+            </div>
+            <div>
+              <div>{email}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </Wrap>
   );
 };

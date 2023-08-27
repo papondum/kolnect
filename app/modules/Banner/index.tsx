@@ -49,7 +49,7 @@ const Wrap = styled("div", {
       fontSize: "$1",
     },
     span: {
-      color: "$hightlight",
+      color: "$highlight",
     },
   },
   ".layback": {
