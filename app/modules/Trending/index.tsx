@@ -3,7 +3,9 @@ import { styled } from "@/stitches.config";
 import { StaticImageData } from "next/image";
 import Card from "@/app/components/card";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
 interface IProps {
   data: ITrending[];
 }
@@ -19,9 +21,12 @@ const Wrap = styled("div", {
   display: "flex",
   alignItems: "center",
   flexDirection: "column",
+  overflow: "hidden",
   ".content-pre-wrapper": {
     overflow: "auto",
-    width: "100%",
+    // width: "100%",
+    width: 1280,
+
     ".content-wrapper": {
       display: "flex",
       // width: 1280,
@@ -61,19 +66,19 @@ const View = ({ data }: IProps) => {
       <div className="content-pre-wrapper">
         {/* <div className="content-wrapper"> */}
         <Swiper
-          spaceBetween={50}
           slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          spaceBetween={30}
+          centeredSlides={true}
+          initialSlide={1}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
         >
           {data.map((i, ii) => (
             <SwiperSlide key={ii}>
-              <Card
-                img={i.img}
-                title={i.title}
-                text={i.text}
-                center={ii == 1 ? true : false}
-              />
+              <Card img={i.img} title={i.title} text={i.text} />
             </SwiperSlide>
           ))}
         </Swiper>
