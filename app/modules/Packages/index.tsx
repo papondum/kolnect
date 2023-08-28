@@ -1,24 +1,38 @@
 import { styled } from "@/stitches.config";
-
+import Image, { StaticImageData } from "next/image";
+import Carousel from "@/app/components/carousel";
+interface ICard {
+  title: string;
+  img: StaticImageData;
+  text: string;
+}
 interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
+  data: ICard[];
 }
 const Wrap = styled("div", {
   p: "$6",
   textAlign: "center",
+  h3: {
+    fontSize: "$7",
+    "@maxlg": {
+      fontSize: "$5",
+    },
+    "@maxsm": {
+      fontSize: "$1",
+    },
+    span: {
+      color: "$primary",
+    },
+  },
 });
-const View = ({}: IProps) => {
+const View = ({ data = [] }: IProps) => {
   return (
     <Wrap id="packages">
-      <div>title Package</div>
+      <h3>
+        Our <span>Packages</span>
+      </h3>
       <div>
-        <div>card1</div>
-        <div>card1</div>
-        <div>card1</div>
-        <div>card1</div>
-        <div>card1</div>
+        <Carousel data={data} />
       </div>
     </Wrap>
   );

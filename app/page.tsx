@@ -14,6 +14,12 @@ import Footer from "@/app/modules/Footer";
 import trendingimg1 from "@/app/assets/Pic_Trending Issues/kol-1-03-02.jpg";
 import trendingimg2 from "@/app/assets/Pic_Trending Issues/kol-1-04.jpg";
 import trendingimg3 from "@/app/assets/Pic_Trending Issues/kol-1-03.jpg";
+
+import packagesimg1 from "@/app/assets/Icon_Packages/Group.png";
+import packagesimg2 from "@/app/assets/Icon_Packages/growth 1.png";
+import packagesimg3 from "@/app/assets/Icon_Packages/social-media-2 1.png";
+import packagesimg4 from "@/app/assets/Icon_Packages/social-media-3 1.png";
+import packagesimg5 from "@/app/assets/Icon_Packages/website-3 1.png";
 import { styled, getCssText } from "@/stitches.config";
 const Main = styled("main", {
   m: 0,
@@ -23,21 +29,63 @@ const Main = styled("main", {
   color: "white",
 });
 const CONTACT = { email: "Sale@ideaslabs.com", mobile: "099-1235690" };
-const TRENDING = [
+const PACKAGES_DATA = [
+  {
+    img: packagesimg3,
+    title: "Promotion Addict",
+    text: `POWER REACH PACKAGE<br/>
+    &#8226; Sale here /Punpro / Rooyoung / Eventpass >> In package</be>
+    &#8226; 19 M Followers`,
+  },
+  {
+    img: packagesimg1,
+    title: "Performance Package",
+    text: `PROMOTION PAGE<br />
+    &#8226;Size XS - L<br />
+    &#8226;Sale here /Punpro / Rooyoung / Eventpass / Tidpro <br />
+    &#8226;1.5 M - 13 M Followers`,
+  },
+
+  {
+    img: packagesimg4,
+    title: "KOLS Customized",
+    text: `&#8226; Objective : CONVERSION & Encourage action<br/>
+    &#8226; Nano 1,001-10,000 / Micro 10,001-50,000<br/>
+    &#8226; Minimum budget 50,000 thb/campaign<br/>
+    Start from 15 KOLS
+    `,
+  },
+  {
+    img: packagesimg2,
+    title: "Value Package",
+    text: `FOOD PAGE<br/>
+    &#8226; Size S - L<br/>
+    &#8226; Starving time / GinMaiYood / CookClick / IAMEAT / กินกับนอน <br/>
+    &#8226; 1.6 M - 7 M Followers`,
+  },
+  {
+    img: packagesimg5,
+    title: "Food Lover",
+    text: `POWER REACH PACKAGE<br/>
+    &#8226; Starving time / GinMaiYood / CookClick / IAMEAT / กินกับนอน >> In package<br/>
+    &#8226; 10 M Followers`,
+  },
+];
+const TRENDING_DATA = [
   {
     img: trendingimg1,
     title: "4 สเต็ปเพิ่มยอดขายให้ทะลุเป้าด้วยกลยุทธ์",
-    text: "1.เลือกใช้ KOL ที่มีฐานผู้ติดตามจำนวนมากเพื่อสร้าง Visibility 2.นำเสนอข้อมูลผลิตภัณฑ์ผ่าน Topic ที่น่าสนใจสำหรับลูกค้า 3.แจ้งราคา ประสิทธิภาพ ไปจนถึงผลลัพธ์หลังการใช้งาน เพื่อการพิจารณา 4.กระตุ้นให้ลูกค้าเร่งตัดสินใจซื้อ โดยใช้ Call to Action ไปยังแหล่งซื้อสินค้าโดยตรง",
+    text: "1.เลือกใช้ KOL ที่มีฐานผู้ติดตามจำนวนมากเพื่อสร้าง Visibility<br/>2.นำเสนอข้อมูลผลิตภัณฑ์ผ่าน Topic ที่น่าสนใจสำหรับลูกค้า<br/>3.แจ้งราคา ประสิทธิภาพ ไปจนถึงผลลัพธ์หลังการใช้งาน เพื่อการพิจารณา<br/>4.กระตุ้นให้ลูกค้าเร่งตัดสินใจซื้อ โดยใช้ Call to Action ไปยังแหล่งซื้อสินค้าโดยตรง",
   },
   {
     img: trendingimg2,
     title: "5 เพจโปรโมชั่นมาแรง เอาใจขาช้อป!",
-    text: "1.Sale Here Followers: 7.3 M 2.ชอบโปร Followers: 6.3 M 3.ปันโปร Followers: 5.4 M 4.EventPass Followers: 4.1 M 5.โปรฮับ Followers: 3.3 M",
+    text: "1.Sale Here Followers: 7.3 M<br/>2.ชอบโปร Followers: 6.3 M<br/>3.ปันโปร Followers: 5.4 M<br/>4.EventPass Followers: 4.1 M<br/>5.โปรฮับ Followers: 3.3 M",
   },
   {
     img: trendingimg3,
     title: "5 อันดับ TikToker คนติดตามมากที่สุด",
-    text: "1.รัชนก สุวรรณเกตุ Followers: 15.6 M 2.TACHAYA Followers: 7.5 M 3.Japan and friends Followers: 2.7 M 4.Kikk Followers: 8.5 M 5.NIKKUNATIP Followers: 8.5 M",
+    text: "1.รัชนก สุวรรณเกตุ Followers: 15.6 M<br/>2.TACHAYA Followers: 7.5 M<br/>3.Japan and friends Followers: 2.7 M<br/>4.Kikk Followers: 8.5 M<br/>5.NIKKUNATIP Followers: 8.5 M",
   },
 ];
 export default function Home() {
@@ -53,8 +101,8 @@ export default function Home() {
         <PlatformData />
         <Credential />
         <Clients />
-        <Trending data={TRENDING} />
-        <Packages />
+        <Trending data={TRENDING_DATA} />
+        <Packages data={PACKAGES_DATA} />
         <Contact email={CONTACT.email} mobile={CONTACT.mobile} />
         <Footer />
       </Main>

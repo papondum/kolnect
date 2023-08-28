@@ -73,7 +73,7 @@ const Wrap = styled("div", {
           zIndex: 1,
           listStyle: "none",
           bc: "black",
-          width: 186,
+          width: 188,
         },
         "&:hover": {
           ".submenu": {
@@ -209,25 +209,25 @@ const View = ({}: IProps) => {
                   children: (
                     <ul className="submenu">
                       <li>
-                        <ScrollLink href="#approach">our approach</ScrollLink>
+                        <ScrollLink href="#approach">Our approach</ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#working-phase">
-                          our working phasing
+                          Our working phasing
                         </ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#platform-data">
-                          our platform data
+                          Our platform data
                         </ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#credential">
-                          our credential
+                          Our credential
                         </ScrollLink>
                       </li>
                       <li>
-                        <ScrollLink href="#clients">our clients</ScrollLink>
+                        <ScrollLink href="#clients">Our clients</ScrollLink>
                       </li>
                     </ul>
                   ),
@@ -247,21 +247,21 @@ const View = ({}: IProps) => {
             <a href="#">Why Us?</a>
             <ul className="submenu">
               <li>
-                <ScrollLink href="#approach">our approach</ScrollLink>
+                <ScrollLink href="#approach">Our approach</ScrollLink>
               </li>
               <li>
                 <ScrollLink href="#working-phase">
-                  our working phasing
+                  Our working phasing
                 </ScrollLink>
               </li>
               <li>
-                <ScrollLink href="#platform-data">our platform data</ScrollLink>
+                <ScrollLink href="#platform-data">Our platform data</ScrollLink>
               </li>
               <li>
-                <ScrollLink href="#credential">our credential</ScrollLink>
+                <ScrollLink href="#credential">Our credential</ScrollLink>
               </li>
               <li>
-                <ScrollLink href="#clients">our clients</ScrollLink>
+                <ScrollLink href="#clients">Our clients</ScrollLink>
               </li>
             </ul>
           </li>

@@ -1,95 +1,143 @@
 "use client";
-import React, { useState } from "react";
-import Flickity from "react-flickity-component";
-import trendingimg1 from "@/app/assets/Pic_Trending Issues/kol-1-03-02.jpg";
-import trendingimg2 from "@/app/assets/Pic_Trending Issues/kol-1-04.jpg";
-import trendingimg3 from "@/app/assets/Pic_Trending Issues/kol-1-03.jpg";
-import Image, { StaticImageData } from "next/image";
-import "flickity/css/flickity.css";
 import { styled } from "@/stitches.config";
-interface ICarousel {
-  items: ICard[];
-}
-interface ICard {
-  img: StaticImageData;
-  title: string;
-  text: string;
-}
-// const CWrap = styled("div", {
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   marginTop: "2rem",
+import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 
-//   ".carousel": {
-//     position: "relative",
-//     overflow: "hidden",
-//     width: 300,
-//     height: 200,
-//   },
-
-//   ".carousel-item": {
-//     position: "absolute",
-//     width: "100%",
-//     height: "100%",
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "center",
-//     bc: "#333",
-//     color: "white",
-//     fontSize: 24,
-//   },
-//   button: {
-//     background: "none",
-//     border: "none",
-//     fontSize: 24,
-//     cursor: "pointer",
-//     my: 10,
-//   },
-// });
-const CardWrap = styled("div", {
-  img: { maxWidth: 368, height: "auto", br: 24 },
-  ".card-title": { fontSize: "$3", maxWidth: 368, mt: 24, height: 60 },
-  ".card-text": { fontSize: "$2", color: "$gray", maxWidth: 368 },
+const CardWrap = styled(motion.div, {
+  position: "absolute",
+  top: 0,
+  img: {
+    width: 100,
+    height: "auto",
+    m: "auto",
+  },
+  variants: {
+    focus: {
+      true: { border: "3px solid $highlight", zIndex: 3, opacity: 1 },
+      false: {},
+    },
+  },
+  zIndex: 1,
+  br: 24,
+  opacity: 0.8,
+  bc: "#424242",
+  px: "$4",
+  py: "$6",
+  maxWidth: 365,
+  height: 450,
+  // display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  ".package-title": { fontWeight: "bold", fontSize: "$4", mt: "$6", mb: "$4" },
+  ".package-text": { fontSize: "$1", textAlign: "start" },
 });
-const Card = ({ img, title, text }: ICard) => (
-  <CardWrap>
-    <div>
-      <Image src={img} alt="" />
-    </div>
-    <div className="card-title">{title}</div>
-    <div className="card-text">{text}</div>
-  </CardWrap>
-);
-const Carousel = ({ items }: ICarousel) => {
-  const [index, setIndex] = useState(0);
-
-  const nextSlide = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % items.length);
-  };
-
-  const prevSlide = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
-  };
-  const flickityOptions = {
-    initialIndex: 2,
-  };
+interface ICard {
+  title: string;
+  img: StaticImageData;
+  text: string;
+  center?: number;
+  index?: number;
+}
+const orbitMap = {
+  0: { r: 1, l: 4 },
+  1: { r: 2, l: 0 },
+  2: { r: 3, l: 1 },
+  3: { r: 4, l: 2 },
+  4: { r: 0, l: 3 },
+};
+const orbit = {
+  0: { x: 0, y: 336 },
+  1: { x: 460, y: 250 },
+  2: { x: 230, y: 60 },
+  3: { x: -230, y: 60 },
+  4: { x: -460, y: 250 },
+};
+const _orbitPlus = {
+  0: { 0: 0, 1: 1, 2: 2, 3: 3, 4: 4 },
+  1: { 1: 0, 2: 1, 3: 2, 4: 3, 0: 4 },
+  2: { 2: 0, 3: 1, 4: 2, 0: 3, 1: 4 },
+  3: { 3: 0, 4: 1, 0: 2, 1: 3, 2: 4 },
+  4: { 4: 0, 0: 1, 1: 2, 2: 3, 3: 4 },
+};
+const Card = ({ title, img, text, index = 0, center }: ICard) => {
+  console.log(index, center);
   return (
-    <Flickity
-      className={"carousel"} // default ''
-      elementType={"div"} // default 'div'
-      options={flickityOptions} // takes flickity options {}
-      // disableImagesLoaded={false} // default false
-      // reloadOnUpdate // default false
-      static // default false
+    <CardWrap
+      animate={orbit[_orbitPlus[center][index]]}
+      variants={orbit}
+      initial={orbit[index]}
+      focus={index == center}
     >
-      <Image src={trendingimg1} />
-      <Image src={trendingimg2} />
-      <Image src={trendingimg3} />
-      {/* {items.map((i, ii) => (
-        <Card key={ii} img={i.img} title={i.title} text={i.text} />
-      ))} */}
-    </Flickity>
+      <Image src={img} alt="" />
+      <div className="package-title">{title}</div>
+      <div
+        className="package-text"
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    </CardWrap>
+  );
+};
+// const CardM = styled(motion.div, { position: "absolute", top: 0 });
+const Wrap = styled("div", {
+  position: "relative",
+  width: 1280,
+  m: "auto",
+  height: 822,
+  ".orbit": {
+    width: "100%",
+    height: "95%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    "&:after": {
+      content: "",
+      position: "absolute",
+      bottom: 18,
+      width: "80%",
+      height: "50%",
+      border: "1px solid white",
+      borderRadius: "50%",
+      zIndex: 0,
+    },
+  },
+  ".arrow-wrap": { height: "5%", display: "flex", justifyContent: "center" },
+});
+interface IProps {
+  data: ICard[];
+}
+const Carousel = (props: IProps) => {
+  const [centerItem, setCenterItem] = useState(0);
+
+  const handleLeft = () => {
+    setCenterItem((prev) => orbitMap[prev].l);
+  };
+  const handleRight = () => {
+    setCenterItem((prev) => orbitMap[prev].r);
+  };
+
+  return (
+    <Wrap>
+      <motion.div className="orbit" variants={orbit}>
+        {props.data.map((i, indx) => {
+          return (
+            <Card
+              title={i.title}
+              text={i.text}
+              img={i.img}
+              key={indx}
+              center={centerItem}
+              index={indx}
+            />
+          );
+        })}
+      </motion.div>
+      <div className="arrow-wrap">
+        <div onClick={handleLeft}>left</div>
+        <div onClick={handleRight}>right</div>
+      </div>
+    </Wrap>
   );
 };
 

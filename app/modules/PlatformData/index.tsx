@@ -21,7 +21,7 @@ Chart.register(
 );
 import { styled } from "@/stitches.config";
 import { Pie, Radar } from "react-chartjs-2";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import Text from "@/app/components/text";
 
 interface IProps {
@@ -41,6 +41,7 @@ const Wrap = styled("div", {
   maxWidth: 1440,
   p: "$6",
   display: "grid",
+  gap: 70,
   gridTemplate: "1fr 1fr / 1fr 1fr 1fr",
   "@maxlg": {
     gridTemplate: "1fr 1fr / 1fr 1fr",
@@ -57,7 +58,7 @@ const Wrap = styled("div", {
   ".right": { ml: "auto", "@maxlg": { m: "auto" } },
   ".title": {
     h3: { fontSize: "$7", mb: "$3", span: { color: "$primary" } },
-    h5: { fontSize: "$4", mb: "$7" }
+    h5: { fontSize: "$4", mb: "$7" },
   },
 });
 
@@ -103,9 +104,9 @@ const RadarChart = ({ title, labels, data }: IChartProps) => {
     },
     plugins: {
       legend: {
-        display: false
-      }
-    }
+        display: false,
+      },
+    },
   };
 
   return <Radar data={radarData} options={radarConfig} />;
@@ -118,11 +119,7 @@ const PieChart = ({ data, title, labels }: IChartProps) => {
       {
         label: title,
         data: data,
-        backgroundColor: [
-          "#E6517A",
-          "#7CC6B6",
-          "#F9CF3D",
-        ],
+        backgroundColor: ["#E6517A", "#7CC6B6", "#F9CF3D"],
         hoverOffset: 4,
       },
     ],
@@ -137,22 +134,33 @@ const PieChart = ({ data, title, labels }: IChartProps) => {
         labels: {
           padding: 32,
           usePointStyle: true,
-          pointStyle: 'circle',
+          pointStyle: "circle",
           generateLabels: (chart: any) => {
-            return chart.config['_config'].data.labels.map((label: string, index: number) => ({
-              text: label,
-              fillStyle: chart.config['_config'].data.datasets[0].backgroundColor[index],
-              strokeStyle: chart.config['_config'].data.datasets[0].backgroundColor[index],
-              fontColor: chart.config['_config'].data.datasets[0].backgroundColor[index]
-            }))
-          }
-        }
+            return chart.config["_config"].data.labels.map(
+              (label: string, index: number) => ({
+                text: label,
+                fillStyle:
+                  chart.config["_config"].data.datasets[0].backgroundColor[
+                    index
+                  ],
+                strokeStyle:
+                  chart.config["_config"].data.datasets[0].backgroundColor[
+                    index
+                  ],
+                fontColor:
+                  chart.config["_config"].data.datasets[0].backgroundColor[
+                    index
+                  ],
+              })
+            );
+          },
+        },
       },
       datalabels: {
-        color: 'white',
-        formatter: (value: number) => `${value}%`
-      }
-    }
+        color: "white",
+        formatter: (value: number) => `${value}%`,
+      },
+    },
   };
 
   return <Pie data={pieData} options={pieConfig} />;

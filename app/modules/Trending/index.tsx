@@ -22,6 +22,7 @@ const Wrap = styled("div", {
   alignItems: "center",
   flexDirection: "column",
   overflow: "hidden",
+  mb: 150,
   ".content-pre-wrapper": {
     overflow: "auto",
     // width: "100%",
@@ -38,6 +39,7 @@ const Wrap = styled("div", {
     m: "$2",
   },
   h3: {
+    mb: 50,
     fontSize: "$7",
     "@maxlg": {
       fontSize: "$5",
@@ -55,7 +57,6 @@ const Wrap = styled("div", {
     mb: 40,
   },
 });
-
 const View = ({ data }: IProps) => {
   return (
     <Wrap id="trending">

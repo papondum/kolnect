@@ -20,7 +20,7 @@ const Card = ({ img, title, text, center }: ITrending) => {
         <Image src={img} alt="" />
       </div>
       <div className="card-title">{title}</div>
-      <div className="card-text">{text}</div>
+      <div className="card-text" dangerouslySetInnerHTML={{ __html: text }} />
     </CardWrap>
   );
 };
