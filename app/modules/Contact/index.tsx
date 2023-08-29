@@ -50,6 +50,9 @@ const Wrap = styled("div", {
       maxWidth: 400,
       marginLeft: "auto",
       textAlign: "start",
+      ".subtitle": {
+        fontSize: "$4",
+      },
       "@maxlg": { mx: "auto" },
     },
   },
@@ -89,7 +92,7 @@ const View = ({ email, mobile }: IProps) => {
           <h3>
             Our <span>Contact</span>
           </h3>
-          <p>Become a customer</p>
+          <p className="subtitle">Become a customer</p>
         </Text>
       </div>
       <div className="box">

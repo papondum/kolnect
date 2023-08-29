@@ -3,11 +3,19 @@ import type * as Stitches from "@stitches/react";
 export type { VariantProps } from "@stitches/react";
 import localFont from "next/font/local";
 const interReg = localFont({
-  src: "public/assets/Font/Inter 2/static/Inter-Regular.ttf",
+  src: "app/assets/Font/Inter 2/static/Inter-Regular.ttf",
   weight: "400",
 });
 const interBold = localFont({
-  src: "public/assets/Font/Inter 2/static/Inter-Bold.ttf",
+  src: "app/assets/Font/Inter 2/static/Inter-Bold.ttf",
+  weight: "600",
+});
+const kanitReg = localFont({
+  src: "app/assets/Font/Inter 2/Kanit-Regular.ttf",
+  weight: "400",
+});
+const kanitBold = localFont({
+  src: "app/assets/Font/Inter 2/Kanit-Bold.ttf",
   weight: "600",
 });
 export const {
@@ -103,6 +111,8 @@ export const {
     fonts: {
       regular: `${interReg.style.fontFamily}, sans-serif`,
       bold: `${interBold.style.fontFamily}, sans-serif`,
+      thReg: `${kanitReg.style.fontFamily}, sans-serif`,
+      thBold: `${kanitBold.style.fontFamily}, sans-serif`,
     },
   },
   media: {
@@ -263,6 +273,7 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
   },
+  ".swiper-wrapper": { justifyContent: "center" },
   ".anticon-close": { color: "white" },
   ".ant-collapse-header-text": { color: "white" },
   ".ant-collapse-header": { p: "0px !important" },

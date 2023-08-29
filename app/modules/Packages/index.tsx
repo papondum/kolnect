@@ -1,6 +1,7 @@
 import { styled } from "@/stitches.config";
 import Image, { StaticImageData } from "next/image";
 import Carousel from "@/app/components/carousel";
+import PinkGlow from "@/app/assets/Rectangle.png";
 interface ICard {
   title: string;
   img: StaticImageData;
@@ -11,7 +12,16 @@ interface IProps {
 }
 const Wrap = styled("div", {
   // p: "$6",
+  overflow: "hidden",
   textAlign: "center",
+  position: "relative",
+  ".center-img": {
+    position: "absolute",
+    width: "40%",
+    height: "auto",
+    bottom: "-13%",
+    left: "29%",
+  },
   h3: {
     fontSize: "$7",
     "@maxlg": {
@@ -28,6 +38,7 @@ const Wrap = styled("div", {
 const View = ({ data = [] }: IProps) => {
   return (
     <Wrap id="packages">
+      <Image className="center-img" src={PinkGlow} alt="pink-glow" />
       <h3>
         Our <span>Packages</span>
       </h3>

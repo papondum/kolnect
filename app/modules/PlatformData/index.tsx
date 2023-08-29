@@ -187,7 +187,7 @@ const View = ({}: IProps) => {
           <h5>Product category (%)</h5>
         </Text>
         <PieChart
-          labels={["Red", "Blue", "Yellow"]}
+          labels={["Product 1", "Product 2", "Product 3"]}
           title="My First Dataset"
           data={[60, 30, 10]}
         />
@@ -197,7 +197,7 @@ const View = ({}: IProps) => {
           <h5>SOW (%)</h5>
         </Text>
         <PieChart
-          labels={["Red", "Blue", "Yellow"]}
+          labels={["Product 1", "Product 2", "Product 3"]}
           title="My First Dataset"
           data={[300, 50, 100]}
         />
@@ -224,7 +224,7 @@ const View = ({}: IProps) => {
           <h5>KOL gender (%)</h5>
         </Text>
         <PieChart
-          labels={["Red", "Blue", "Yellow"]}
+          labels={["Product 1", "Product 2", "Product 3"]}
           title="My First Dataset"
           data={[300, 50, 100]}
         />
@@ -234,7 +234,7 @@ const View = ({}: IProps) => {
           <h5>KOL tier (%)</h5>
         </Text>
         <PieChart
-          labels={["Red", "Blue", "Yellow"]}
+          labels={["Product 1", "Product 2", "Product 3"]}
           title="My First Dataset"
           data={[300, 50, 100]}
         />

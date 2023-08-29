@@ -24,10 +24,13 @@ const Wrap = styled("div", {
   overflow: "hidden",
   mb: 150,
   ".content-pre-wrapper": {
+    ".swiper": {
+      height: 640,
+    },
     overflow: "auto",
     // width: "100%",
     width: 1280,
-
+    ".pord": { mr: "0 !important" },
     ".content-wrapper": {
       display: "flex",
       // width: 1280,
@@ -39,7 +42,7 @@ const Wrap = styled("div", {
     m: "$2",
   },
   h3: {
-    mb: 50,
+    mb: 8,
     fontSize: "$7",
     "@maxlg": {
       fontSize: "$5",
@@ -78,7 +81,7 @@ const View = ({ data }: IProps) => {
           className="mySwiper"
         >
           {data.map((i, ii) => (
-            <SwiperSlide key={ii}>
+            <SwiperSlide className="pord" key={ii}>
               <Card img={i.img} title={i.title} text={i.text} />
             </SwiperSlide>
           ))}

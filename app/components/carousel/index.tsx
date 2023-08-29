@@ -3,7 +3,7 @@ import { styled } from "@/stitches.config";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 const CardWrap = styled(motion.div, {
   position: "absolute",
   top: 0,
@@ -26,7 +26,6 @@ const CardWrap = styled(motion.div, {
   py: "$6",
   maxWidth: 365,
   height: 450,
-  // display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
@@ -76,12 +75,10 @@ const Card = ({ title, img, text, index = 0, center, onMove }: ICard) => {
           // Swiped right
           console.log("right");
           onMove && onMove("l");
-          // controls.start({ x: 100 }); // Adjust the animation as needed
         } else if (deltaX < -swipeThreshold) {
           // Swiped left
           console.log("left");
           onMove && onMove("r");
-          // controls.start({ x: -100 }); // Adjust the animation as needed
         }
       }
     }
@@ -121,16 +118,16 @@ const Wrap = styled("div", {
   position: "relative",
   maxWidth: 1280,
   m: "auto",
-  height: 822,
+  height: 890,
   ".orbit": {
     width: "100%",
-    height: "95%",
+    height: "91%",
     display: "grid",
     placeItems: "center",
     "&:after": {
       content: "",
       position: "absolute",
-      bottom: 54,
+      bottom: 116,
       width: "72%",
       height: "36%",
       border: "1px solid white",
@@ -140,6 +137,8 @@ const Wrap = styled("div", {
   },
   ".arrow-wrap": {
     height: "5%",
+    gap: "$5",
+    fontSize: "$5",
     display: "flex",
     justifyContent: "center",
     alignItems: "end",
@@ -175,8 +174,12 @@ const Carousel = (props: IProps) => {
         })}
       </motion.div>
       <div className="arrow-wrap">
-        <div onClick={() => handleMove("l")}>left</div>
-        <div onClick={() => handleMove("r")}>right</div>
+        <div onClick={() => handleMove("l")}>
+          <LeftOutlined />
+        </div>
+        <div onClick={() => handleMove("r")}>
+          <RightOutlined />
+        </div>
       </div>
     </Wrap>
   );

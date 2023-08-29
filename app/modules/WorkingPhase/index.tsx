@@ -7,6 +7,7 @@ import icondollar from "@/app/assets/Icon_Working Phasing/dollar 1.png";
 import iconpaperplane from "@/app/assets/Icon_Working Phasing/paper-plane 1.png";
 import iconrating from "@/app/assets/Icon_Working Phasing/rating-9 1.png";
 import Text from "@/app/components/text";
+import Sparkle from "@/app/assets/particle/sparkle.svg";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;
@@ -118,12 +119,24 @@ const Step = ({ children, imgsrc, first = false }: IStep) => {
     </StepWrap>
   );
 };
+
 const View = ({}: IProps) => {
   return (
     <Wrap id="working-phase">
       <div className="bg-partial">
         <Image src={imgbgleft} alt="bg" />
       </div>
+      <Image
+        src={Sparkle}
+        alt="sparkle"
+        style={{
+          position: "absolute",
+          right: "10%",
+          top: "32%",
+          width: "3.24%",
+          height: "auto",
+        }}
+      />
       <Text className="content-wrapper">
         <h3>
           Our <span>Working Phasing</span>

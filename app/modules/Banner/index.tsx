@@ -60,7 +60,7 @@ const Wrap = styled("div", {
     ".right-img": {
       position: "absolute",
       left: 0,
-      bottom: "24%",
+      bottom: "28%",
       width: "10%",
       height: "auto",
       "@maxlg": { bottom: "48%" },
@@ -69,7 +69,7 @@ const Wrap = styled("div", {
     ".left-img": {
       position: "absolute",
       right: 0,
-      top: "25%",
+      top: "16%",
       width: "32%",
       height: "auto",
       "@maxlg": { top: "15%" },
