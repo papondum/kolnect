@@ -14,7 +14,7 @@ const CardWrap = styled(motion.div, {
   },
   variants: {
     focus: {
-      true: { border: "3px solid $highlight", zIndex: 3, opacity: 1 },
+      true: { border: "3px solid $highlight", zIndex: 3, opacity: 1, boxShadow: "0px 4px 10px 0px rgba(238, 59, 116, 0.80)" },
       false: {},
     },
   },
