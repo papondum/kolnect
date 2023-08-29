@@ -6,8 +6,8 @@ import iconchecklist from "@/app/assets/Icon_Working Phasing/check-list 1.png";
 import icondollar from "@/app/assets/Icon_Working Phasing/dollar 1.png";
 import iconpaperplane from "@/app/assets/Icon_Working Phasing/paper-plane 1.png";
 import iconrating from "@/app/assets/Icon_Working Phasing/rating-9 1.png";
-import Text from "@/app/components/text";
 import Sparkle from "@/app/assets/particle/sparkle.svg";
+import Text from "@/app/components/text";
 interface IProps {
   //   dealer: IDealer;
   //   onClose: () => void;
@@ -21,16 +21,16 @@ const Wrap = styled("div", {
   textAlign: "center",
   justifyContent: "center",
   position: "relative",
-
   ".bg-partial": {
     position: "absolute",
     left: 0,
     width: "20%",
     height: "auto",
-    // img: {
-    //   height: "100%",
-    //   width: "auto",
-    // },
+  },
+  ".sparkle": {
+    position: "absolute",
+    right: "127px",
+    top: "140px",
   },
   ".content-wrapper": {
     color: "$white",
@@ -54,7 +54,6 @@ const Wrap = styled("div", {
   },
   img: {
     height: "auto",
-    width: "100%",
   },
 });
 interface IStep {
@@ -123,10 +122,11 @@ const Step = ({ children, imgsrc, first = false }: IStep) => {
 const View = ({}: IProps) => {
   return (
     <Wrap id="working-phase">
-      <div className="bg-partial">
-        <Image src={imgbgleft} alt="bg" />
+      <div className="bg">
+        <Image className="bg-partial" src={imgbgleft} alt="bg" />
+        <Image className="sparkle" src={Sparkle} width="52" alt="sparkle" />
       </div>
-      <Image
+      {/* <Image
         src={Sparkle}
         alt="sparkle"
         style={{
@@ -136,7 +136,7 @@ const View = ({}: IProps) => {
           width: "3.24%",
           height: "auto",
         }}
-      />
+      /> */}
       <Text className="content-wrapper">
         <h3>
           Our <span>Working Phasing</span>

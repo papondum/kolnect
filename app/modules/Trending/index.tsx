@@ -4,6 +4,10 @@ import { StaticImageData } from "next/image";
 import Card from "@/app/components/card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import Image from "next/image";
+import PinkGlow from "@/app/assets/particle/pink-glow.png";
+import Glow from "@/app/assets/particle/green-glow.png";
+import Sparkle from "@/app/assets/particle/sparkle.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 interface IProps {
@@ -22,7 +26,32 @@ const Wrap = styled("div", {
   alignItems: "center",
   flexDirection: "column",
   overflow: "hidden",
+  position: "relative",
   mb: 150,
+  ".bg": {
+    img: {
+      position: "absolute",
+    },
+    ".glow": {
+      left: 0,
+      top: "70px"
+    },
+    ".sparkle-left": {
+      left: "150px",
+      top: "50px",
+      transform: "rotate(-13.861deg)"
+    },
+    ".pink-glow": {
+      right: 0,
+      top: "30px",
+      transform: "rotate(95deg)"
+    },
+    ".sparkle-right": {
+      top: "100px",
+      right: "50px",
+      transform: "rotate(13.004deg)"
+    }
+  },
   ".content-pre-wrapper": {
     ".swiper": {
       height: 640,
@@ -63,6 +92,12 @@ const Wrap = styled("div", {
 const View = ({ data }: IProps) => {
   return (
     <Wrap id="trending">
+      <div className="bg">
+        <Image className="glow" src={Glow} width="350" alt="glow" />
+        <Image className="sparkle-left" src={Sparkle} width="41" alt="sparkle-left" />
+        <Image className="pink-glow" src={PinkGlow} width="387" alt="pink-glow" />
+        <Image className="sparkle-right" src={Sparkle} width="41" alt="sparkle-right" />
+      </div>
       <h3>
         Our <span>Trending</span> Issues
       </h3>

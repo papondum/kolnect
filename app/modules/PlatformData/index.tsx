@@ -43,6 +43,7 @@ const Wrap = styled("div", {
   display: "grid",
   gap: 70,
   m: "auto",
+  mt: 110,
   mb: 150,
   gridTemplate: "1fr 1fr / 1fr 1fr 1fr",
   "@maxlg": {

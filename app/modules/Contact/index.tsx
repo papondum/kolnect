@@ -2,7 +2,8 @@ import { styled } from "@/stitches.config";
 import Text from "@/app/components/text";
 import Image from "next/image";
 import contacticon from "@/app/assets/Icon_Ourcontact.png";
-import Glow from "@/app/assets/banner/glow";
+import Email from "@/app/assets/footer/email.svg";
+import Phone from "@/app/assets/footer/phone.svg";
 import greenimgglow from "@/app/assets/Rectangle-green.png";
 import pinkimgglow from "@/app/assets/Rectangle-pink.png";
 interface IProps {
@@ -73,7 +74,11 @@ const Wrap = styled("div", {
     gap: 24,
     "@maxlg": { margin: "auto" },
     img: { maxWidth: 80, height: "auto" },
-    ".detail": { gap: 10, "@maxlg": { textAlign: "start" } },
+    ".detail": {
+      gap: 10,
+      "@maxlg": { textAlign: "start" },
+      ".phonemail-wrap": { display: "flex", gap: "$3", mb: 10 },
+    },
     ".title-wrap": {
       display: "flex",
       gap: 24,
@@ -104,11 +109,11 @@ const View = ({ email, mobile }: IProps) => {
             <div className="text">Sales team</div>
           </div>
           <div className="detail">
-            <div>
-              <div>{mobile}</div>
+            <div className="phonemail-wrap">
+              <Image src={Phone} alt="phone" /> {mobile}
             </div>
-            <div>
-              <div>{email}</div>
+            <div className="phonemail-wrap">
+              <Image src={Email} alt="email" /> {email}
             </div>
           </div>
         </div>

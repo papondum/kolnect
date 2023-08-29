@@ -34,6 +34,15 @@ const Wrap = styled("div", {
       color: "$primary",
     },
   },
+  ".bg": {
+    display: "flex",
+    justifyContent: "center",
+    img: {
+      position: "absolute",
+      bottom: "-125px",
+      transform: "rotate(-110deg)",
+    },
+  },
 });
 const View = ({ data = [] }: IProps) => {
   return (
