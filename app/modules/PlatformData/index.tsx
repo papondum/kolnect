@@ -42,9 +42,12 @@ const Wrap = styled("div", {
   p: "$6",
   display: "grid",
   gap: 70,
+  m: "auto",
+  mb: 150,
   gridTemplate: "1fr 1fr / 1fr 1fr 1fr",
   "@maxlg": {
     gridTemplate: "1fr 1fr / 1fr 1fr",
+    gap: 35,
   },
   "@maxsm": {
     gridTemplate: "1fr  / 1fr",
@@ -57,6 +60,9 @@ const Wrap = styled("div", {
   ".mid": { m: "auto", "@maxlg": { m: "auto" } },
   ".right": { ml: "auto", "@maxlg": { m: "auto" } },
   ".title": {
+    maxWidth: 400,
+    ml: "auto",
+    "@maxlg": { m: "auto" },
     h3: { fontSize: "$7", mb: "$3", span: { color: "$primary" } },
     h5: { fontSize: "$4", mb: "$7" },
   },
@@ -196,7 +202,7 @@ const View = ({}: IProps) => {
           data={[300, 50, 100]}
         />
       </div>
-      <div className="box">
+      <div className="box" style={{ margin: "auto" }}>
         <Text className="title">
           <h5>Posted channel (%)</h5>
         </Text>

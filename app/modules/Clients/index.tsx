@@ -36,6 +36,8 @@ const Wrap = styled("div", {
   justifyContent: "center",
   flexDirection: "column",
   alignItems: "center",
+  overflow: "hidden",
+  mb: 150,
   h3: {
     fontSize: "$7",
     mb: 50,
@@ -69,8 +71,8 @@ const Wrap = styled("div", {
     ".mySwiper>div": {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
-    }
+      justifyContent: "center",
+    },
   },
 });
 
@@ -144,7 +146,11 @@ const View = ({}: IProps) => {
         >
           {data[activeTab].img.map((item, index) => (
             <SwiperSlide key={index}>
-              <Image width="100" src={item} alt={`${data[activeTab].key}-${index}`} />
+              <Image
+                width="100"
+                src={item}
+                alt={`${data[activeTab].key}-${index}`}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

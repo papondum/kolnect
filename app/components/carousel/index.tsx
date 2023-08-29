@@ -39,6 +39,7 @@ interface ICard {
   text: string;
   center?: number;
   index?: number;
+  onMove?: (arg: string) => void;
 }
 const orbitMap = {
   0: { r: 1, l: 4 },
@@ -61,14 +62,50 @@ const _orbitPlus = {
   3: { 3: 0, 4: 1, 0: 2, 1: 3, 2: 4 },
   4: { 4: 0, 0: 1, 1: 2, 2: 3, 3: 4 },
 };
-const Card = ({ title, img, text, index = 0, center }: ICard) => {
-  console.log(index, center);
+const Card = ({ title, img, text, index = 0, center, onMove }: ICard) => {
+  const [startX, setStartX] = useState(null);
+  const handleMove = (e) => {
+    if (index == center) {
+      if (startX !== null) {
+        const deltaX = e.touches[0].clientX - startX;
+
+        // Adjust this threshold as needed to determine a swipe
+        const swipeThreshold = 50;
+
+        if (deltaX > swipeThreshold) {
+          // Swiped right
+          console.log("right");
+          onMove && onMove("l");
+          // controls.start({ x: 100 }); // Adjust the animation as needed
+        } else if (deltaX < -swipeThreshold) {
+          // Swiped left
+          console.log("left");
+          onMove && onMove("r");
+          // controls.start({ x: -100 }); // Adjust the animation as needed
+        }
+      }
+    }
+  };
+  const handleTouchStart = (e) => {
+    if (index == center) {
+      setStartX(e.touches[0].clientX);
+    }
+  };
+  const handleTouchEnd = () => {
+    if (index == center) {
+      setStartX(null);
+    }
+    // controls.start({ x: 0 });
+  };
   return (
     <CardWrap
       animate={orbit[_orbitPlus[center][index]]}
       variants={orbit}
       initial={orbit[index]}
       focus={index == center}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleMove}
+      onTouchEnd={handleTouchEnd}
     >
       <Image src={img} alt="" />
       <div className="package-title">{title}</div>
@@ -82,27 +119,31 @@ const Card = ({ title, img, text, index = 0, center }: ICard) => {
 // const CardM = styled(motion.div, { position: "absolute", top: 0 });
 const Wrap = styled("div", {
   position: "relative",
-  width: 1280,
+  maxWidth: 1280,
   m: "auto",
   height: 822,
   ".orbit": {
     width: "100%",
     height: "95%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: "grid",
+    placeItems: "center",
     "&:after": {
       content: "",
       position: "absolute",
-      bottom: 18,
-      width: "80%",
-      height: "50%",
+      bottom: 54,
+      width: "72%",
+      height: "36%",
       border: "1px solid white",
       borderRadius: "50%",
       zIndex: 0,
     },
   },
-  ".arrow-wrap": { height: "5%", display: "flex", justifyContent: "center" },
+  ".arrow-wrap": {
+    height: "5%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "end",
+  },
 });
 interface IProps {
   data: ICard[];
@@ -110,11 +151,10 @@ interface IProps {
 const Carousel = (props: IProps) => {
   const [centerItem, setCenterItem] = useState(0);
 
-  const handleLeft = () => {
-    setCenterItem((prev) => orbitMap[prev].l);
-  };
-  const handleRight = () => {
-    setCenterItem((prev) => orbitMap[prev].r);
+  const handleMove = (pos: string) => {
+    if (pos) {
+      setCenterItem((prev) => orbitMap[prev][pos]);
+    }
   };
 
   return (
@@ -129,13 +169,14 @@ const Carousel = (props: IProps) => {
               key={indx}
               center={centerItem}
               index={indx}
+              onMove={handleMove}
             />
           );
         })}
       </motion.div>
       <div className="arrow-wrap">
-        <div onClick={handleLeft}>left</div>
-        <div onClick={handleRight}>right</div>
+        <div onClick={() => handleMove("l")}>left</div>
+        <div onClick={() => handleMove("r")}>right</div>
       </div>
     </Wrap>
   );

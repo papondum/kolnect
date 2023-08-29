@@ -10,7 +10,7 @@ interface IProps {
   data: ICard[];
 }
 const Wrap = styled("div", {
-  p: "$6",
+  // p: "$6",
   textAlign: "center",
   h3: {
     fontSize: "$7",

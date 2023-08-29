@@ -37,7 +37,7 @@ const Wrap = styled("div", {
   top: 0,
   bc: "black",
   p: "$3",
-  zIndex: 3,
+  zIndex: 4,
   ".container": {
     maxWidth: 1264,
     flex: 1,
