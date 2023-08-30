@@ -14,7 +14,12 @@ const CardWrap = styled(motion.div, {
   },
   variants: {
     focus: {
-      true: { border: "3px solid $highlight", zIndex: 3, opacity: 1, boxShadow: "0px 4px 10px 0px rgba(238, 59, 116, 0.80)" },
+      true: {
+        border: "3px solid $highlight",
+        zIndex: 3,
+        opacity: 1,
+        boxShadow: "0px 4px 10px 0px rgba(238, 59, 116, 0.80)",
+      },
       false: {},
     },
   },
@@ -32,14 +37,7 @@ const CardWrap = styled(motion.div, {
   ".package-title": { fontWeight: "bold", fontSize: "$4", mt: "$6", mb: "$4" },
   ".package-text": { fontSize: "$1", textAlign: "start" },
 });
-interface ICard {
-  title: string;
-  img: StaticImageData;
-  text: string;
-  center?: number;
-  index?: number;
-  onMove?: (arg: string) => void;
-}
+
 const orbitMap = {
   0: { r: 1, l: 4 },
   1: { r: 2, l: 0 },
@@ -61,7 +59,15 @@ const _orbitPlus = {
   3: { 3: 0, 4: 1, 0: 2, 1: 3, 2: 4 },
   4: { 4: 0, 0: 1, 1: 2, 2: 3, 3: 4 },
 };
-const Card = ({ title, img, text, index = 0, center, onMove }: ICard) => {
+// interface ICard {
+//   title: string;
+//   img: StaticImageData;
+//   text: string;
+//   center?: any;
+//   index?: any;
+//   onMove?: (arg: string) => void;
+// }
+const Card = ({ title, img, text, index = 0, center, onMove }) => {
   const [startX, setStartX] = useState(null);
   const handleMove = (e) => {
     if (index == center) {
@@ -144,13 +150,13 @@ const Wrap = styled("div", {
     alignItems: "end",
   },
 });
-interface IProps {
-  data: ICard[];
-}
-const Carousel = (props: IProps) => {
+// interface IProps {
+//   data: ICard[];
+// }
+const Carousel = (props) => {
   const [centerItem, setCenterItem] = useState(0);
 
-  const handleMove = (pos: string) => {
+  const handleMove = (pos) => {
     if (pos) {
       setCenterItem((prev) => orbitMap[prev][pos]);
     }
