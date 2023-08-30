@@ -20,7 +20,8 @@ import packagesimg2 from "@/app/assets/Icon_Packages/growth 1.png";
 import packagesimg3 from "@/app/assets/Icon_Packages/social-media-2 1.png";
 import packagesimg4 from "@/app/assets/Icon_Packages/social-media-3 1.png";
 import packagesimg5 from "@/app/assets/Icon_Packages/website-3 1.png";
-import { styled, getCssText } from "@/stitches.config";
+import { styled, getCssText, globalStyles } from "@/stitches.config";
+
 const Main = styled("main", {
   m: 0,
   bc: "$basebg",
@@ -137,9 +138,10 @@ const APPROACH_DATA = [
   { content: "Connect with the right message" },
 ];
 export default function Home() {
+  globalStyles();
   return (
     <>
-      <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+      {/* <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} /> */}
       <Main>
         <HeaderNav />
         <Banner />

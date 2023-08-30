@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@/stitches.config";
 import Image from "next/image";
 import Banner from "@/app/assets/banner/banner";
@@ -6,11 +7,7 @@ import Glow from "@/app/assets/particle/glow.png";
 import Sparkle from "@/app/assets/particle/sparkle.svg";
 // import BannerImg from "@/app/assets/banner/banner-img.svg"
 import Text from "@/app/components/text";
-interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
-}
+interface IProps {}
 const Wrap = styled("div", {
   minHeight: 642,
   display: "flex",

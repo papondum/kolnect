@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@/stitches.config";
 import Image, { StaticImageData } from "next/image";
 import Carousel from "@/app/components/carousel";

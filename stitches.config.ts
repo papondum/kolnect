@@ -36,15 +36,6 @@ export const {
       highlight: "#E6517A",
       white: "#FFFFFF",
       basebg: "#161617",
-      // primaryDark: "#94141E",
-      // primaryPaleRed: "#FFF2F4",
-      // lightBlue: "#0099FF",
-      // blue: "#0087E1",
-      // green: "#009662",
-      // gold: "#E0AA7A",
-      // goldDark: "#987853",
-      // goldLight: "#BDA991",
-      // goldMedium: "#C2AE80",
     },
     shadows: {
       primary: "#ED1C24",
@@ -129,13 +120,6 @@ export const {
     lg: "(min-width: 1024px)",
     // xl: "(min-width: 1280px)",
     xl: "(min-width: 1440px)",
-    // "3xl": "(min-width: 1680px)",
-    // "4xl": "(min-width: 1920px)",
-    // motion: "(prefers-reduced-motion)",
-    // hover: "(any-hover: hover)",
-    // dark: "(prefers-color-scheme: dark)",
-    // light: "(prefers-color-scheme: light)",
-    // container: "(min-width: 1329px)",
   },
   utils: {
     p: (value: Stitches.PropertyValue<"padding">) => ({
@@ -229,9 +213,6 @@ export const globalStyles = globalCss({
     },
     "--header-height":
       "calc(var(--secondary-nav-height) + var(--primary-nav-height))",
-    // '--sticky-top': 'var(--header-height)',
-    // '--sticky-viewport-height':
-    //   'calc(var(--vh, 1vh)*100 - var(--header-height))',
     "--sticky-top": 0,
     "--sticky-viewport-height": "calc(var(--vh, 1vh)*100)",
     "--product-nav-height": "60px",
@@ -261,8 +242,7 @@ export const globalStyles = globalCss({
     margin: 0,
     fontFamily: "$regular",
     scrollBehavior: "smooth",
-    // bc: "$basebg",
-    // wordBreak: 'break-word',
+    color: "white",
   },
   "article, aside, footer, header, nav, main, section, picture, figcaption, figure":
     {

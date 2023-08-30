@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@/stitches.config";
 import Image from "next/image";
 import Logo from "@/app/assets/logo";

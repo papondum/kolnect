@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@/stitches.config";
 import Text from "@/app/components/text";
 import Countup from "@/app/components/countup";
