@@ -1,12 +1,11 @@
 import { styled } from "@/stitches.config";
 import Image from "next/image";
-import Logo from "@/app/assets/logo"
+import Logo from "@/app/assets/logo";
 
-import Email from "@/app/assets/footer/email.svg"
-import Phone from "@/app/assets/footer/phone.svg"
-import FB from "@/app/assets/footer/fb.svg"
-import IG from "@/app/assets/footer/ig.svg"
-
+import Email from "@/app/assets/footer/email.svg";
+import Phone from "@/app/assets/footer/phone.svg";
+import FB from "@/app/assets/footer/fb.svg";
+import IG from "@/app/assets/footer/ig.svg";
 
 interface IProps {
   //   dealer: IDealer;
@@ -16,7 +15,8 @@ interface IProps {
 const Wrap = styled("div", {
   bc: "$basebg",
   px: 100,
-  py: "$10",
+  pt: "$10",
+  pb: "$4",
   boxShadow: "4px 0px 10px 0px rgba(255, 255, 255, 0.25)",
   "@maxsm": {
     px: "$10",
@@ -33,14 +33,14 @@ const Wrap = styled("div", {
   ".row": {
     display: "flex",
     img: {
-      mr: "$4"
-    }
+      mr: "$4",
+    },
   },
   ".social": {
     mt: "$4",
     justifyContent: "center",
     "@maxlg": {
-      mb: "$13"
+      mb: "$13",
     },
   },
   ".inner-wrapper": {
@@ -53,19 +53,19 @@ const Wrap = styled("div", {
         color: "$white",
         fontSize: "$4",
         fontWeight: 600,
-        mb: "$4"
+        mb: "$4",
       },
       h6: {
         fontSize: "$2",
         fontWeight: 600,
-        mb: "$3"
+        mb: "$3",
       },
       fontSize: "$1",
       color: "$gray",
       div: {
         mb: "$2",
-        lineHeight: "24px"
-      }
+        lineHeight: "24px",
+      },
     },
     "@maxlg": {
       justifyContent: "space-between",
@@ -76,7 +76,7 @@ const Wrap = styled("div", {
   },
   ".copyright": {
     textAlign: "center",
-    fontSize: "$1"
+    fontSize: "$1",
   },
 });
 const View = ({}: IProps) => {
@@ -94,8 +94,12 @@ const View = ({}: IProps) => {
           <div className="group">
             <h5>Join our team</h5>
             <h6>HR contact</h6>
-            <div className="row"><Image src={Phone} alt="phone" /> 099-1235690</div>
-            <div className="row"><Image src={Email} alt="email" /> Sale@ideaslabs.com</div>
+            <div className="row">
+              <Image src={Phone} alt="phone" /> 099-1235690
+            </div>
+            <div className="row">
+              <Image src={Email} alt="email" /> Sale@ideaslabs.com
+            </div>
           </div>
           <div className="group">
             <h5>Address</h5>

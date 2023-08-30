@@ -28,6 +28,43 @@ const Main = styled("main", {
   height: "auto",
   color: "white",
 });
+const PLATFORM_DATA = [
+  {
+    type: "pie",
+    labels: ["Product 1", "Product 2", "Product 3"],
+    title: "Product category (%)",
+    values: [60, 10, 30],
+    position: "mid",
+  },
+  {
+    type: "pie",
+    labels: ["Product 1", "Product 2", "Product 3"],
+    title: "SOW (%)",
+    values: [60, 10, 30],
+    position: "right",
+  },
+  {
+    type: "radar",
+    labels: ["Thing 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5", "Thing 6"],
+    title: "Posted channel (%)",
+    values: [4, 4, 3, 5, 3, 1],
+    position: "",
+  },
+  {
+    type: "pie",
+    labels: ["Product 1", "Product 2", "Product 3"],
+    title: "KOL gender (%)",
+    values: [60, 10, 30],
+    position: "mid",
+  },
+  {
+    type: "pie",
+    labels: ["Product 1", "Product 2", "Product 3"],
+    title: "KOL tier (%)",
+    values: [60, 10, 30],
+    position: "right",
+  },
+];
 const CONTACT = { email: "Sale@ideaslabs.com", mobile: "099-1235690" };
 const PACKAGES_DATA = [
   {
@@ -88,6 +125,17 @@ const TRENDING_DATA = [
     text: "1.รัชนก สุวรรณเกตุ Followers: 15.6 M<br/>2.TACHAYA Followers: 7.5 M<br/>3.Japan and friends Followers: 2.7 M<br/>4.Kikk Followers: 8.5 M<br/>5.NIKKUNATIP Followers: 8.5 M",
   },
 ];
+const CREDENTIAL_DATA = [
+  { label: "Years in business", value: 5 },
+  { label: "Success Campaige", value: 800 },
+  { label: "Industries", value: 17 },
+  { label: "Customers", value: 2000 },
+];
+const APPROACH_DATA = [
+  { content: "Pick the right KOLs with strategy-drive" },
+  { content: "Choose the right platform of each audiences" },
+  { content: "Connect with the right message" },
+];
 export default function Home() {
   return (
     <>
@@ -96,10 +144,10 @@ export default function Home() {
         <HeaderNav />
         <Banner />
         <SubBanner />
-        <Approach />
+        <Approach data={APPROACH_DATA} />
         <WorkingPhase />
-        <PlatformData />
-        <Credential />
+        <PlatformData data={PLATFORM_DATA} />
+        <Credential data={CREDENTIAL_DATA} />
         <Clients />
         <Trending data={TRENDING_DATA} />
         <Packages data={PACKAGES_DATA} />

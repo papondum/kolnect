@@ -74,13 +74,14 @@ const Wrap = styled("div", {
           listStyle: "none",
           bc: "black",
           width: 188,
+          ".li-menu": { width: "100%", a: { textAlign: "start" } },
         },
         "&:hover": {
           ".submenu": {
             opacity: 1,
             // bottom: 0,
             visibility: "visible",
-            "a:hover": {
+            ".li-menu:hover": {
               background: "#DF4B05",
             },
           },
@@ -117,58 +118,6 @@ const Wrap = styled("div", {
       nav: {
         display: "block",
       },
-    },
-  },
-
-  ".link-wrapper": {
-    display: "flex",
-    alignItems: "center",
-    gap: "$7",
-    "@maxlg": { display: "none" },
-    ".hover-elem": {
-      position: "relative",
-      ".submenu": {
-        left: 0,
-        opacity: 0,
-        position: "absolute",
-        top: 32,
-        pt: 26,
-        visibility: "hidden",
-        zIndex: 1,
-        listStyle: "none",
-        bc: "black",
-        width: 186,
-      },
-      "&:hover": {
-        ".submenu": {
-          opacity: 1,
-          // bottom: 0,
-          visibility: "visible",
-          "a:hover": {
-            background: "#DF4B05",
-          },
-        },
-      },
-      // "li:hover a ": {
-      //   background: "#000000",
-      // },
-      // "a:hover": {
-      //   background: "#DF4B05",
-      // },
-    },
-    li: {
-      float: "left",
-      "list-style-type": "none",
-      position: "relative",
-      width: "auto",
-      p: "$3 $4",
-    },
-    a: {
-      // background: "#30A6E6",
-      color: "#FFFFFF",
-      display: "block",
-      textAlign: "center",
-      textDecoration: "none",
     },
   },
 });
@@ -246,21 +195,21 @@ const View = ({}: IProps) => {
           <li className="hover-elem">
             <a href="#">Why Us?</a>
             <ul className="submenu">
-              <li>
+              <li className="li-menu">
                 <ScrollLink href="#approach">Our approach</ScrollLink>
               </li>
-              <li>
+              <li className="li-menu">
                 <ScrollLink href="#working-phase">
                   Our working phasing
                 </ScrollLink>
               </li>
-              <li>
+              <li className="li-menu">
                 <ScrollLink href="#platform-data">Our platform data</ScrollLink>
               </li>
-              <li>
+              <li className="li-menu">
                 <ScrollLink href="#credential">Our credential</ScrollLink>
               </li>
-              <li>
+              <li className="li-menu">
                 <ScrollLink href="#clients">Our clients</ScrollLink>
               </li>
             </ul>

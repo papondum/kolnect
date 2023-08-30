@@ -1,9 +1,12 @@
 import { styled } from "@/stitches.config";
 import Text from "@/app/components/text";
+import Countup from "@/app/components/countup";
 interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
+  data: IText[];
+}
+interface IText {
+  label: string;
+  value: number;
 }
 const Wrap = styled("div", {
   bc: "$bgbase",
@@ -64,7 +67,7 @@ const Wrap = styled("div", {
     },
   },
 });
-const View = ({}: IProps) => {
+const View = ({ data }: IProps) => {
   //TODO: animate number running when scroll
   return (
     <Wrap id="credential">
@@ -74,22 +77,14 @@ const View = ({}: IProps) => {
         </h3>
       </Text>
       <div className="box-value">
-        <Text className="item">
-          <h4>5+</h4>
-          <div>years in business</div>
-        </Text>
-        <Text className="item">
-          <h4>800+</h4>
-          <div>Success Campaigne</div>
-        </Text>
-        <Text className="item">
-          <h4>17+</h4>
-          <div>Industries</div>
-        </Text>
-        <Text className="item">
-          <h4>2,000+</h4>
-          <div>Customers</div>
-        </Text>
+        {data.map((i, ii) => (
+          <Text key={ii} className="item">
+            <h4>
+              <Countup end={i.value} />+
+            </h4>
+            <div>{i.label}</div>
+          </Text>
+        ))}
       </div>
     </Wrap>
   );

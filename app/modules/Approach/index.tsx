@@ -3,9 +3,7 @@ import Text from "@/app/components/text";
 import Image from "next/image";
 import approachImg from "@/app/assets/BG/Pic_Kolnect2.png";
 interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
+  data: { content: string }[];
 }
 const Wrap = styled("div", {
   bc: "$basebg",
@@ -58,7 +56,8 @@ const Wrap = styled("div", {
     },
   },
 });
-const View = ({}: IProps) => {
+
+const View = ({ data }: IProps) => {
   return (
     <Wrap id="approach">
       <div className="box">
@@ -69,15 +68,12 @@ const View = ({}: IProps) => {
           <div className="subtitle">Professional Procedure</div>
         </Text>
         <div>
-          <Text className="list-box">
-            <span>1</span>Pick the right KOLs with strategy-drive
-          </Text>
-          <Text className="list-box">
-            <span>2</span>Choose the right platform of each audiences
-          </Text>
-          <Text className="list-box">
-            <span>3</span>Connect with the right message
-          </Text>
+          {data.map((i, ii) => (
+            <Text key={ii} className="list-box">
+              <span>{ii + 1}</span>
+              {i.content}
+            </Text>
+          ))}
         </div>
       </div>
       <div className="box">

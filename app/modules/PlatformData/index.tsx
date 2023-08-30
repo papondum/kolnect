@@ -25,11 +25,15 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import Text from "@/app/components/text";
 
 interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
+  data: IChart[];
 }
-
+interface IChart {
+  type: string;
+  labels: string[];
+  title: string;
+  values: number[];
+  position?: string;
+}
 interface IChartProps {
   title: string;
   data: number[];
@@ -57,9 +61,10 @@ const Wrap = styled("div", {
     textAlign: "center",
     p: "$3",
     maxWidth: 295,
+    "@maxlg": { m: "auto" },
   },
-  ".mid": { m: "auto", "@maxlg": { m: "auto" } },
-  ".right": { ml: "auto", "@maxlg": { m: "auto" } },
+  ".mid": { m: "auto" },
+  ".right": { ml: "auto" },
   ".title": {
     maxWidth: 400,
     ml: "auto",
@@ -173,7 +178,7 @@ const PieChart = ({ data, title, labels }: IChartProps) => {
   return <Pie data={pieData} options={pieConfig} />;
 };
 
-const View = ({}: IProps) => {
+const View = ({ data }: IProps) => {
   //TODO: Chart dynamic easy config value
   return (
     <Wrap id="platform-data">
@@ -183,63 +188,20 @@ const View = ({}: IProps) => {
           <span>Platform Data</span>
         </h3>
       </Text>
-      <div className="box mid">
-        <Text className="title">
-          <h5>Product category (%)</h5>
-        </Text>
-        <PieChart
-          labels={["Product 1", "Product 2", "Product 3"]}
-          title="My First Dataset"
-          data={[60, 30, 10]}
-        />
-      </div>
-      <div className="box right">
-        <Text className="title">
-          <h5>SOW (%)</h5>
-        </Text>
-        <PieChart
-          labels={["Product 1", "Product 2", "Product 3"]}
-          title="My First Dataset"
-          data={[300, 50, 100]}
-        />
-      </div>
-      <div className="box" style={{ margin: "auto" }}>
-        <Text className="title">
-          <h5>Posted channel (%)</h5>
-        </Text>
-        <RadarChart
-          labels={[
-            "Thing 1",
-            "Thing 2",
-            "Thing 3",
-            "Thing 4",
-            "Thing 5",
-            "Thing 6",
-          ]}
-          data={[4, 4, 3, 5, 3, 1]}
-          title={"Posted channel (%)"}
-        />
-      </div>
-      <div className="box mid">
-        <Text className="title">
-          <h5>KOL gender (%)</h5>
-        </Text>
-        <PieChart
-          labels={["Product 1", "Product 2", "Product 3"]}
-          title="My First Dataset"
-          data={[300, 50, 100]}
-        />
-      </div>
-      <div className="box right">
-        <Text className="title">
-          <h5>KOL tier (%)</h5>
-        </Text>
-        <PieChart
-          labels={["Product 1", "Product 2", "Product 3"]}
-          title="My First Dataset"
-          data={[300, 50, 100]}
-        />
-      </div>
+      {data.map((i, ii) => {
+        return (
+          <div key={ii} className={`box ${i.position}`}>
+            <Text className="title">
+              <h5>{i.title}</h5>
+            </Text>
+            {i.type == "pie" ? (
+              <PieChart labels={i.labels} title="" data={i.values} />
+            ) : (
+              <RadarChart labels={i.labels} data={i.values} title="" />
+            )}
+          </div>
+        );
+      })}
     </Wrap>
   );
 };
