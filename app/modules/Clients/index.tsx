@@ -73,6 +73,21 @@ const Wrap = styled("div", {
       alignItems: "center",
       justifyContent: "center",
     },
+    ".swiper-pagination": {
+      visibility: "hidden",
+      position: "relative",
+      mt: "$6",
+      "@maxlg": {
+        visibility: "visible",
+      },
+    },
+    ".swiper-pagination-bullet-active": {
+      background: "$highlight !important"
+    },
+    ".swiper-pagination-bullet": {
+      background: "$white",
+      opacity: 1
+    }
   },
 });
 

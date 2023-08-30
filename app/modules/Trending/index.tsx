@@ -55,6 +55,19 @@ const Wrap = styled("div", {
   ".content-pre-wrapper": {
     ".swiper": {
       height: 640,
+      ".swiper-pagination": {
+        visibility: "hidden",
+        "@maxlg": {
+          visibility: "visible",
+        },
+      },
+      ".swiper-pagination-bullet-active": {
+        background: "$highlight !important"
+      },
+      ".swiper-pagination-bullet": {
+        background: "$white",
+        opacity: 1
+      }
     },
     overflow: "auto",
     // width: "100%",
