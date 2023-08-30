@@ -82,7 +82,7 @@ const Wrap = styled("div", {
             // bottom: 0,
             visibility: "visible",
             ".li-menu:hover": {
-              background: "#DF4B05",
+              background: "$highlight",
             },
           },
         },

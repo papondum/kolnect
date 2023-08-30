@@ -20,7 +20,7 @@ const Wrap = styled("div", {
     position: "absolute",
     width: "40%",
     height: "auto",
-    bottom: "-13%",
+    bottom: "-7%",
     left: "29%",
   },
   h3: {
