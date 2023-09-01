@@ -46,11 +46,11 @@ const orbitMap = {
   4: { r: 0, l: 3 },
 };
 const orbit = {
-  0: { x: 0, y: 336 },
-  1: { x: 460, y: 250 },
-  2: { x: 230, y: 60 },
-  3: { x: -230, y: 60 },
-  4: { x: -460, y: 250 },
+  0: { x: 0, y: 336, zIndex: 3 },
+  1: { x: 460, y: 250, zIndex: 2 },
+  2: { x: 230, y: 60, zIndex: 1 },
+  3: { x: -230, y: 60, zIndex: 1 },
+  4: { x: -460, y: 250, zIndex: 2 },
 };
 const _orbitPlus = {
   0: { 0: 0, 1: 1, 2: 2, 3: 3, 4: 4 },
@@ -59,14 +59,7 @@ const _orbitPlus = {
   3: { 3: 0, 4: 1, 0: 2, 1: 3, 2: 4 },
   4: { 4: 0, 0: 1, 1: 2, 2: 3, 3: 4 },
 };
-// interface ICard {
-//   title: string;
-//   img: StaticImageData;
-//   text: string;
-//   center?: any;
-//   index?: any;
-//   onMove?: (arg: string) => void;
-// }
+
 const Card = ({ title, img, text, index = 0, center, onMove }) => {
   const [startX, setStartX] = useState(null);
   const handleMove = (e) => {
@@ -79,11 +72,11 @@ const Card = ({ title, img, text, index = 0, center, onMove }) => {
 
         if (deltaX > swipeThreshold) {
           // Swiped right
-          console.log("right");
+          // console.log("right");
           onMove && onMove("l");
         } else if (deltaX < -swipeThreshold) {
           // Swiped left
-          console.log("left");
+          // console.log("left");
           onMove && onMove("r");
         }
       }
@@ -119,7 +112,7 @@ const Card = ({ title, img, text, index = 0, center, onMove }) => {
     </CardWrap>
   );
 };
-// const CardM = styled(motion.div, { position: "absolute", top: 0 });
+
 const Wrap = styled("div", {
   position: "relative",
   maxWidth: 1280,

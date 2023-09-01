@@ -34,23 +34,25 @@ const Wrap = styled("div", {
     },
     ".glow": {
       left: 0,
-      top: "70px"
+      top: "70px",
     },
     ".sparkle-left": {
       left: "150px",
       top: "50px",
-      transform: "rotate(-13.861deg)"
+      transform: "rotate(-13.861deg)",
+      "@maxsm": { display: "none" },
     },
     ".pink-glow": {
       right: 0,
       top: "30px",
-      transform: "rotate(95deg)"
+      transform: "rotate(95deg)",
     },
     ".sparkle-right": {
       top: "100px",
       right: "50px",
-      transform: "rotate(13.004deg)"
-    }
+      transform: "rotate(13.004deg)",
+      "@maxsm": { display: "none" },
+    },
   },
   ".content-pre-wrapper": {
     ".swiper": {
@@ -62,12 +64,12 @@ const Wrap = styled("div", {
         },
       },
       ".swiper-pagination-bullet-active": {
-        background: "$highlight !important"
+        background: "$highlight !important",
       },
       ".swiper-pagination-bullet": {
         background: "$white",
-        opacity: 1
-      }
+        opacity: 1,
+      },
     },
     overflow: "auto",
     // width: "100%",
@@ -87,10 +89,7 @@ const Wrap = styled("div", {
     mb: 8,
     fontSize: "$7",
     "@maxlg": {
-      fontSize: "$5",
-    },
-    "@maxsm": {
-      fontSize: "$1",
+      fontSize: "$6",
     },
     span: {
       color: "$primary",
@@ -107,9 +106,24 @@ const View = ({ data }: IProps) => {
     <Wrap id="trending">
       <div className="bg">
         <Image className="glow" src={Glow} width="350" alt="glow" />
-        <Image className="sparkle-left" src={Sparkle} width="41" alt="sparkle-left" />
-        <Image className="pink-glow" src={PinkGlow} width="387" alt="pink-glow" />
-        <Image className="sparkle-right" src={Sparkle} width="41" alt="sparkle-right" />
+        <Image
+          className="sparkle-left"
+          src={Sparkle}
+          width="41"
+          alt="sparkle-left"
+        />
+        <Image
+          className="pink-glow"
+          src={PinkGlow}
+          width="387"
+          alt="pink-glow"
+        />
+        <Image
+          className="sparkle-right"
+          src={Sparkle}
+          width="41"
+          alt="sparkle-right"
+        />
       </div>
       <h3>
         Our <span>Trending</span> Issues

@@ -32,6 +32,7 @@ const Wrap = styled("div", {
     position: "absolute",
     right: "127px",
     top: "140px",
+    "@maxsm": { display: "none" },
   },
   ".content-wrapper": {
     color: "$white",
@@ -88,7 +89,7 @@ const StepWrap = styled("div", {
     "&::after": {
       content: "",
       width: 230,
-      "@maxlg": { width: "260%" },
+      "@maxlg": { width: "215%" },
       height: 3,
       bc: "$white",
       top: 3,
@@ -127,17 +128,6 @@ const View = ({}: IProps) => {
         <Image className="bg-partial" src={imgbgleft} alt="bg" />
         <Image className="sparkle" src={Sparkle} width="52" alt="sparkle" />
       </div>
-      {/* <Image
-        src={Sparkle}
-        alt="sparkle"
-        style={{
-          position: "absolute",
-          right: "10%",
-          top: "32%",
-          width: "3.24%",
-          height: "auto",
-        }}
-      /> */}
       <Text className="content-wrapper">
         <h3>
           Our <span>Working Phasing</span>

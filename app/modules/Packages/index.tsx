@@ -26,10 +26,7 @@ const Wrap = styled("div", {
   h3: {
     fontSize: "$7",
     "@maxlg": {
-      fontSize: "$5",
-    },
-    "@maxsm": {
-      fontSize: "$1",
+      fontSize: "$6",
     },
     span: {
       color: "$primary",

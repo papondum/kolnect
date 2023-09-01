@@ -29,6 +29,7 @@ const Wrap = styled("div", {
     display: "flex",
     justifyContent: "space-between",
     maxWidth: 1280,
+    gap: 90,
     width: "100%",
 
     "@maxlg": {

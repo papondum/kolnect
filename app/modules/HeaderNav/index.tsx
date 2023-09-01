@@ -6,11 +6,7 @@ import Logo from "@/app/assets/logo";
 import { useState } from "react";
 import { Drawer, Collapse } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-interface IProps {
-  //   dealer: IDealer;
-  //   onClose: () => void;
-  //   panel: IPanel;
-}
+interface IProps {}
 const DrawerWrap = styled("div", {
   display: "flex",
   alignItems: "start",
@@ -27,6 +23,7 @@ const DrawerWrap = styled("div", {
     color: "#FFFFFF",
     display: "block",
     textDecoration: "none",
+    "&:hover": { color: "$highlight" },
   },
 });
 const Wrap = styled("div", {
@@ -61,6 +58,7 @@ const Wrap = styled("div", {
       alignItems: "center",
       gap: "$7",
       "@maxlg": { display: "none" },
+
       ".hover-elem": {
         position: "relative",
         ".submenu": {
@@ -73,25 +71,18 @@ const Wrap = styled("div", {
           zIndex: 1,
           listStyle: "none",
           bc: "black",
-          width: 188,
-          ".li-menu": { width: "100%", a: { textAlign: "start" } },
+          width: 190,
+          ".li-menu": {
+            width: "100%",
+            a: { textAlign: "start" },
+          },
         },
         "&:hover": {
           ".submenu": {
             opacity: 1,
-            // bottom: 0,
             visibility: "visible",
-            ".li-menu:hover": {
-              background: "$highlight",
-            },
           },
         },
-        // "li:hover a ": {
-        //   background: "#000000",
-        // },
-        // "a:hover": {
-        //   background: "#DF4B05",
-        // },
       },
       li: {
         float: "left",
@@ -101,11 +92,11 @@ const Wrap = styled("div", {
         p: "$3 $4",
       },
       a: {
-        // background: "#30A6E6",
         color: "#FFFFFF",
         display: "block",
         textAlign: "center",
         textDecoration: "none",
+        "&:hover": { color: "$highlight" },
       },
     },
   },
@@ -158,25 +149,25 @@ const View = ({}: IProps) => {
                   children: (
                     <ul className="submenu">
                       <li>
-                        <ScrollLink href="#approach">Our approach</ScrollLink>
+                        <ScrollLink href="#approach">Our Approach</ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#working-phase">
-                          Our working phasing
+                          Our Working phasing
                         </ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#platform-data">
-                          Our platform data
+                          Our Platform data
                         </ScrollLink>
                       </li>
                       <li>
                         <ScrollLink href="#credential">
-                          Our credential
+                          Our Credential
                         </ScrollLink>
                       </li>
                       <li>
-                        <ScrollLink href="#clients">Our clients</ScrollLink>
+                        <ScrollLink href="#clients">Our Clients</ScrollLink>
                       </li>
                     </ul>
                   ),
@@ -196,21 +187,21 @@ const View = ({}: IProps) => {
             <a href="#">Why Us?</a>
             <ul className="submenu">
               <li className="li-menu">
-                <ScrollLink href="#approach">Our approach</ScrollLink>
+                <ScrollLink href="#approach">Our Approach</ScrollLink>
               </li>
               <li className="li-menu">
                 <ScrollLink href="#working-phase">
-                  Our working phasing
+                  Our Working phasing
                 </ScrollLink>
               </li>
               <li className="li-menu">
-                <ScrollLink href="#platform-data">Our platform data</ScrollLink>
+                <ScrollLink href="#platform-data">Our Platform data</ScrollLink>
               </li>
               <li className="li-menu">
-                <ScrollLink href="#credential">Our credential</ScrollLink>
+                <ScrollLink href="#credential">Our Credential</ScrollLink>
               </li>
               <li className="li-menu">
-                <ScrollLink href="#clients">Our clients</ScrollLink>
+                <ScrollLink href="#clients">Our Clients</ScrollLink>
               </li>
             </ul>
           </li>
