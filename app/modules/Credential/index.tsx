@@ -40,6 +40,7 @@ const Wrap = styled("div", {
     },
     "@maxsm": {
       gridTemplate: "1fr /1fr",
+      px: 64,
     },
     ".item": {
       position: "relative",

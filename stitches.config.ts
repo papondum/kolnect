@@ -253,7 +253,7 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
   },
-  ".swiper-wrapper": { justifyContent: "center" },
+  ".swiper-wrapper": { justifyContent: "space-between" },
   ".anticon-close": { color: "white" },
   ".ant-collapse-header-text": { color: "white" },
   ".ant-collapse-header": { p: "0px !important" },

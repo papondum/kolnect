@@ -2,9 +2,9 @@ import { styled } from "@/stitches.config";
 import Image, { StaticImageData } from "next/image";
 const CardWrap = styled("div", {
   fontFamily: "$thReg",
-  img: { width: "100%", maxWidth: 368, height: "auto", br: 24 },
+  img: { width: "100%", maxWidth: 368, height: "auto", br: 24, m: "auto" },
   ".card-title": { fontSize: "$3", maxWidth: 368, mt: 24, height: 60 },
-  ".card-text": { fontSize: "$2", color: "$gray", maxWidth: 368 },
+  ".card-text": { fontSize: "$2", color: "$gray", maxWidth: 368, m: "auto" },
 });
 
 interface ITrending {
